@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'assets/css/navbar.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/add.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Vahan</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/" class="nav-logo">Vehicle Specifications</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/know" class="nav-link">Know</a>
+                </li>
+                <li class="searchicon"><form action="{% url 'show' %}" method="post">
+                    {% csrf_token %}
+                    <input class="input-open" type="search" placeholder="Search" name="model" id="searchField" autocomplete="off"
+                        value="">
+                    <button class="btn1" type="submit"><i id="icon1" class="fa fa-search"></i></button>
+                </form>
+                </li>
+            </ul>
+            <!-- <div class="searchicon1">
+                <button class="btn1" type="submit"><i id="icon1" class="fa fa-search" ></i></button>
+            </div>-->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    {% block body %} {% endblock %}
+    <script src="{% static 'assets/script/navbar.js' %}"></script>
+    <script src="{% static 'assets/script/horside.js' %}"></script>
+    
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>w3.slideshow(".nature", 5000);</script>
+    <script>w3.slideshow(".show1", 6000);</script>
+    <footer>
+       
+        <section class="footer1">
+            
+            © Copyright: BHAVYA SINGH
+        </section>
+    </footer>
+</body>
+
+</html>
